@@ -1,3 +1,7 @@
+```
+Developed by: R.Jayamani
+Reg no: 212222100014
+```
 # Experiment--05-Implementation-of-flipflops-using-verilog
 ### AIM: To implement all the flipflops using verilog and validating their functionality using their functional tables
 ### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
@@ -104,23 +108,46 @@ Q(t+1)=T′Q(t)+TQ(t)′
 ### Procedure
 /* write all the steps invloved */
 
+ 1.Open Quartus II and select new project and choose the file location.
+ 
+ 2.Module Declaration. Module should have the file name. 
+ 
+ 3.Declare Inputs and outputs. 
+ 
+ 4.Use assign declaration and wire to define the functionality of logic circuits. 
+ 
+ 5.End the program with endmodule. 6.Run the program and choose RTL viewer to get RTL realization.
 
 
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: Jayamani.R
+RegisterNumber:  212222100014
 */
-
+## SR FLIPFLOP
+```
+module flipflop(S,R,Q,Qbar,Clk);
+input S,R,Clk;
+output reg Q,Qbar;
+initial Q=0;
+initial Qbar=1;
+always @(posedge Clk)
+begin
+Q=S|(Q&(~R));
+Qbar=R|(Qbar&(~S));
+end
+endmodule
+```
 
 
 
 
 
 ### RTL LOGIC FOR FLIPFLOPS 
+## SR FLIPFLOP
 
-
+![Screenshot 2023-09-16 091027](https://github.com/Jayamani25/Experiment--05-Implementation-of-flipflops-using-verilog/assets/85949888/db656b6b-5e9c-4b95-bc93-763a1cd76545)
 
 
 
@@ -129,9 +156,8 @@ RegisterNumber:
 
 
 ### TIMING DIGRAMS FOR FLIP FLOPS 
-
-
-
+## SR FLIPFLOP
+![Screenshot 2023-09-16 092005](https://github.com/Jayamani25/Experiment--05-Implementation-of-flipflops-using-verilog/assets/85949888/2c3851ef-f575-4a4a-9f69-7fbd2b77c046)
 
 
 
